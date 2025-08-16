@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfApp1.Cat_Ages"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Cat_Ages" Height="450" Width="800">
+    <StackPanel>
+        <Menu>
+            <MenuItem Header="File">
+                <MenuItem Header="New">
+                    <MenuItem Header="New File"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Open"></MenuItem>
+                <MenuItem Header="Exit"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock
+                Text="How old is your cat? (years)"
+                FontSize="16"/>
+            <TextBox
+                x:Name="InputCatAge"
+                Width="120"
+                Margin="5,0,0,0"
+                TextAlignment="Center"
+                FontSize="16"
+                KeyDown="InputCatAge_KeyDown"/>
+        </StackPanel>
+        <TextBlock x:Name="ResultTextBlock"
+                   Text="Your cat is"
+                   FontSize="16"/>
+        <Image Height="400" Source="https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/DCTM_Penguin_UK_DK_AL697473_RGB_PNG_namnse.jpg"/>
+    </StackPanel>
+</Window>

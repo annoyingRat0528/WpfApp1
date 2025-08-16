@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApp1.AmericanPresident"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="AmericanPresident" Height="400" Width="400">
+    <StackPanel>
+        <TextBlock Margin="10,10,0,0" x:Name="Q1" FontWeight="Bold">Which president do you vote for?</TextBlock>
+        <RadioButton Checked="RadioButton_Checked_1" GroupName="Choose President" Margin="10,0,0,0" VerticalContentAlignment="Center">
+            <WrapPanel>
+                <Image Width="30" Source="https://so1.360tres.com/t01089c8b68451eba7e.jpg"></Image>
+                <Label FontSize="30">Obama</Label>
+            </WrapPanel>
+        </RadioButton>
+        <RadioButton Checked="RadioButton_Checked_1" GroupName="Choose President" Margin="10,0,0,0" VerticalContentAlignment="Center">
+            <WrapPanel>
+                <Image Width="30" Source="https://dynaimage.cdn.cnn.com/cnn/digital-images/org/2200b2eb-538f-464c-8cca-2c44a8738e90.jpg"></Image>
+                <Label FontSize="30">Biden</Label>
+            </WrapPanel>
+        </RadioButton>
+        <RadioButton Checked="RadioButton_Checked_1" GroupName="Choose President" Margin="10,0,0,0" VerticalContentAlignment="Center">
+            <WrapPanel>
+                <Image Width="30" Source="https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2024/09/1200/675/GettyImages-2168330769.jpg"></Image>
+                <Label FontSize="30">Trump</Label>
+            </WrapPanel>
+        </RadioButton>
+        <TextBlock Margin="10,0,0,0" x:Name="Q2" FontWeight="Bold">Choose your feeling about the president</TextBlock>
+        <RadioButton Checked="RadioButton_Checked_2" GroupName="Feeling" Margin="10,0,0,0">Good</RadioButton>
+        <RadioButton Checked="RadioButton_Checked_3" GroupName="Feeling" Margin="10,0,0,0">Okay</RadioButton>
+        <RadioButton Checked="RadioButton_Checked_4" GroupName="Feeling" Margin="10,0,0,0">Not happy</RadioButton>
+
+    </StackPanel>
+</Window>

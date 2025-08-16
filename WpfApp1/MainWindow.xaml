@@ -1,0 +1,44 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="An Ordinary WPF Application" Height="500" Width="500">
+    <StackPanel>
+        <Button x:Name="MyButton" ToolTip="Literally generates." Height="30" Margin="10,10,10,10" Background="Gold" Content="Click to generate good review" BorderBrush="Brown"   Click="MyButton_Click" MouseEnter="MyButton_MouseEnter" MouseLeave="MyButton_MouseLeave"/>
+        <Button x:Name="Enlarge" Height="20" Margin="20,0,20,10" Content="Click to enlarge" Click="Enlarge_Click" MouseEnter="MyButton_MouseEnter" MouseLeave="MyButton_MouseLeave"></Button>
+        <Button x:Name="Smaller" Height="20" Margin="20,0,20,10" Content="Click to debloat" Click="Smaller_Click" MouseEnter="MyButton_MouseEnter" MouseLeave="MyButton_MouseLeave"></Button>
+
+        <TextBlock Margin="10,0,10,10" Foreground="BlueViolet" Name="myTextBlock">Hello <Bold>World!</Bold> And hello <Italic>you</Italic> 
+                <LineBreak/>
+                Go to <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="https://www.google.com/">google.com</Hyperlink>
+        </TextBlock>
+
+        <TextBlock Margin="10,0,10,10" TextWrapping="Wrap">
+                Lorem ipsum dolor sit amet, 
+                <Span Foreground="YellowGreen">consectetur</Span>
+                 adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </TextBlock>
+        <Label x:Name="revLabel" BorderBrush="Green" BorderThickness="1" Margin="10,0,10,0" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="64" Source="https://www.apple.com.cn/iphone-16/images/overview/welcome/hero_endframe__dtznvlokjeeu_medium.png"></Image>
+                <AccessText FontSize="10" Text="iPhone 16 "></AccessText>
+                <AccessText FontSize="10" FontFamily="Cascadia Code" Text="Review"></AccessText>
+            </StackPanel>
+        </Label>
+        <TextBox x:Name="MyTextBox" FontStyle="Italic" FontSize="12" Margin="15" AcceptsReturn="True" TextWrapping="Wrap" SpellCheck.IsEnabled="True" Language="en-US" Background="AliceBlue"></TextBox>
+        <CheckBox x:Name="cbParent" Margin="10,0,10,0" IsThreeState="True"
+                  Checked="cbParent_Checked" Unchecked="cbParent_Unchecked" Indeterminate="cbParent_Indeterminate"
+                  Background="GreenYellow">Use recommended settings</CheckBox>
+        <CheckBox x:Name="cbPostPublic" Checked="ItemChecked" Unchecked="ItemUnchecked" Margin="10,10,10,0">Post to the public</CheckBox>
+        <CheckBox x:Name="cbLeaveName" Checked="ItemChecked" Unchecked="ItemUnchecked" Margin="10,10,10,10">Leave name</CheckBox>
+        <CheckBox x:Name="cbPlatform" Checked="ItemChecked" Unchecked="ItemUnchecked" Margin="10,0,10,10" VerticalContentAlignment="Center">
+            <WrapPanel>
+                <Image Width="30" Source="https://1.bp.blogspot.com/-criOgAzEpNw/URRl-6CYbAI/AAAAAAAAAL0/cre5GFasfSQ/s1600/windows-logo.png"></Image>
+                <Label>Post as an honorable Windows User</Label>
+            </WrapPanel>
+        </CheckBox>
+    </StackPanel>
+</Window>
