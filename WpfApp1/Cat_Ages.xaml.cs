@@ -62,5 +62,95 @@ namespace WpfApp1
         {
             ResultTextBlock.Text = "Your cat is " + resultHumanAge + " years old";
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            TextDelete.Text = "";
+        }
+
+        private void MyComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            ComboBoxItem comboBoxItem = (ComboBoxItem)comboBox.SelectedItem;
+            string newFontSize = (string)comboBoxItem.Content;
+
+            int temp;
+            if (Int32.TryParse(newFontSize, out temp)) {
+                if (TextDelete != null) {
+                    TextDelete.FontSize = temp;
+                }
+            }
+        }
+
+
+        private void MenuItemCheck_Checked(object sender, RoutedEventArgs e)
+        {
+            TextDelete.TextDecorations = TextDecorations.Underline;
+        }
+
+        private void MenuItemCheck_Unchecked(object sender, RoutedEventArgs e)
+        {
+            TextDelete.TextDecorations = null;
+        }
+
+        private void MenuItemItalic_Checked(object sender, RoutedEventArgs e)
+        {
+                TextDelete.FontStyle = FontStyles.Italic;
+
+        }
+
+        private void MenuItemItalic_Unchecked(object sender, RoutedEventArgs e)
+        {
+                TextDelete.FontStyle = FontStyles.Normal;
+        }
+
+        private void MenuItemBold_Checked(object sender, RoutedEventArgs e)
+        {
+                TextDelete.FontWeight = FontWeights.Bold;
+        }
+
+        private void MenuItemBold_Unchecked(object sender, RoutedEventArgs e)
+        {
+                TextDelete.FontWeight = FontWeights.Normal;
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonNameChange.Content = "Don't click me anymore!";
+            ButtonNameChange.IsEnabled = false;
+        }
+
+        bool isFullyLoaded;
+        private void CheckIsLoaded()
+        {
+            if (Progress.Value == 100)
+            {
+                isFullyLoaded= true;
+            }
+            else
+            {
+                isFullyLoaded= false;
+            }
+
+            if (isFullyLoaded)
+            {
+                LoadStatus.Content = "Done!";
+            }
+            else
+            {
+                LoadStatus.Content = "Loading...";
+            }
+        }
+        private void ButtonNameChange_Click(object sender, RoutedEventArgs e)
+        {
+            Progress.Value += 10;
+            CheckIsLoaded();
+        }
+
+        private void Decrease_Click(object sender, RoutedEventArgs e)
+        {
+            Progress.Value -= 10;
+            CheckIsLoaded();
+        }
     }
 }

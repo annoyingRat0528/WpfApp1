@@ -6,17 +6,38 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Cat_Ages" Height="450" Width="800">
-    <StackPanel>
-        <Menu>
+    <DockPanel LastChildFill="False">
+        <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
                 <MenuItem Header="New">
-                    <MenuItem Header="New File"></MenuItem>
+                    <MenuItem Header="New File">
+                    </MenuItem>
+                        <MenuItem.Icon>
+                            <Image Source="https://static.vecteezy.com/system/resources/previews/010/929/556/original/project-management-icon-free-vector.jpg"></Image>
+                        </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem Header="Open"></MenuItem>
                 <MenuItem Header="Exit"></MenuItem>
             </MenuItem>
         </Menu>
-        <StackPanel Orientation="Horizontal">
+        
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button Click="Button_Click" ToolTip="Delete Text">
+                    <Image Height="20" Source="https://www.seekpng.com/png/detail/202-2022743_edit-delete-icon-png-download-delete-icon-png.png"></Image>
+                </Button>
+                <Separator/>
+                <Label>Font Size</Label>
+                <ComboBox x:Name="MyComboBox" SelectionChanged="MyComboBox_SelectionChanged">
+                    <ComboBoxItem>8</ComboBoxItem>
+                    <ComboBoxItem IsSelected="True">10</ComboBoxItem>
+                    <ComboBoxItem>12</ComboBoxItem>
+                    <ComboBoxItem>14</ComboBoxItem>
+                </ComboBox>
+            </ToolBar>
+        </ToolBarTray>
+        
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
             <TextBlock
                 Text="How old is your cat? (years)"
                 FontSize="16"/>
@@ -28,9 +49,51 @@
                 FontSize="16"
                 KeyDown="InputCatAge_KeyDown"/>
         </StackPanel>
+        
         <TextBlock x:Name="ResultTextBlock"
                    Text="Your cat is"
-                   FontSize="16"/>
-        <Image Height="400" Source="https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/DCTM_Penguin_UK_DK_AL697473_RGB_PNG_namnse.jpg"/>
-    </StackPanel>
+                   FontSize="16"
+                   DockPanel.Dock="Top"/>
+        
+        <TextBox x:Name="TextDelete" DockPanel.Dock="Top" Margin="10">
+            Test TextBox
+            <TextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="MenuItemBold" Header="Bold Text" IsCheckable="True" Checked="MenuItemBold_Checked" Unchecked="MenuItemBold_Unchecked"></MenuItem>
+                    <MenuItem x:Name="MenuItemItalic" Header="Italic Text" IsCheckable="True" Checked="MenuItemItalic_Checked" Unchecked="MenuItemItalic_Unchecked"></MenuItem>
+                    <MenuItem x:Name="MenuItemCheck" Header="Underline Text" IsCheckable="True"  Checked="MenuItemCheck_Checked" Unchecked="MenuItemCheck_Unchecked"></MenuItem>
+                </ContextMenu>
+            </TextBox.ContextMenu>
+        </TextBox>
+
+        <StatusBar DockPanel.Dock="Top" Margin="20">
+            <StatusBarItem Name="LoadStatus">
+                Loading...
+            </StatusBarItem>
+            <Separator/>
+            <StatusBarItem>
+                <ProgressBar Name="Progress" Width="300" Height="15" Value="10" Maximum="100"></ProgressBar>
+            </StatusBarItem>
+        </StatusBar>
+
+        <Button Name="Decrease" DockPanel.Dock="Bottom" Margin="20,0,20,10" Click="Decrease_Click">
+            Decrease by 10
+        </Button>
+        
+        <Button Name="ButtonNameChange" 
+                DockPanel.Dock="Bottom" 
+                Content="Increase by 10" 
+                Margin="20,20,20,10" 
+                Click="ButtonNameChange_Click">
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Change Text" Click="MenuItem_Click">
+                        <MenuItem.Icon>
+                            <Image Source="https://www.apple.com.cn/newsroom/images/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/geo/Apple-WWDC25-Liquid-Glass-hero-250609_big.jpg.medium.jpg"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
+    </DockPanel>
 </Window>
